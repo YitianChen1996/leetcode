@@ -8,26 +8,31 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };           
 
-class Solution {
+class SnakeGame {
 public:
-    bool hasCycle(ListNode *head) {
-        if (head == NULL) {
-            return false;
-        }
-        ListNode *p1 = head, *p2 = head;
-        p1 = p1->next;
-        p2 = (p2 != NULL && p2->next != NULL) ? p2->next->next : NULL;
-        while(p1 != NULL && p2 != NULL) {
-            if (p1 == p2) {
-                return true;
-            } else {
-                p1 = p1->next;
-                p2 = (p2 != NULL && p2->next != NULL) ? p2->next->next : NULL;
-            }
-        }
-        return false;
+    /** Initialize your data structure here.
+        @param width - screen width
+        @param height - screen height 
+        @param food - A list of food positions
+        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */
+    SnakeGame(int width, int height, vector<pair<int, int>> food) {
+        
+    }
+    
+    /** Moves the snake.
+        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down 
+        @return The game's score after the move. Return -1 if game over. 
+        Game over when snake crosses the screen boundary or bites its body. */
+    int move(string direction) {
+        
     }
 };
+
+/**
+ * Your SnakeGame object will be instantiated and called as such:
+ * SnakeGame obj = new SnakeGame(width, height, food);
+ * int param_1 = obj.move(direction);
+ */
 
 int main() {
     
