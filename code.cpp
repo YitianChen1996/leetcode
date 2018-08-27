@@ -41,7 +41,7 @@ private:
             while (endIndex < s.length() && s[endIndex] != ',') {
                 endIndex++;
             }
-            ret.push_back(s.substring(beginIndex, endIndex - beginIndex));
+            ret.push_back(s.substr(beginIndex, endIndex - beginIndex));
             if (endIndex >= s.length()) { break; }
             beginIndex = endIndex + 1;
         }
@@ -84,7 +84,7 @@ public:
     // Decodes your encoded data to tree.
     TreeNode* deserialize(string data) {
         vector<string> vec;
-        vec = stringToVector(data, vec);
+        stringToVector(data, vec);
         return constructTreeByVector(vec, 0, vec.size() - 1);
     }
 };
@@ -94,5 +94,10 @@ public:
 // codec.deserialize(codec.serialize(root));
 
 int main() {
-    
+    string s = "2,n,n";
+    Codec *codec = new Codec();
+    TreeNode *root = codec->deserialize(s);
+    s = codec->serialize(root);
+    cout << s << endl;
+    return 0;
 }
