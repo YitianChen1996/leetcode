@@ -1,5 +1,7 @@
+#include "base.h"
+
 bool cmp(int a, int b) {
-    if (a == b) { return true; }
+    if (a == b) { return false; }
     string sa = to_string(a);
     string sb = to_string(b);
     int pa = 0, pb = 0;
